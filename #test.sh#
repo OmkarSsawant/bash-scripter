@@ -1,0 +1,25 @@
+#!/bin/bash 
+
+#set exit on error
+set -e
+
+function open_project(){
+	cd ~/Documents/Projects/Datanza/speech_entry || return 1
+	return 0
+}
+
+function open_vscode(){
+	code .
+	return 0	
+}
+
+
+
+open_project
+open_vscode
+
+#set no exit on error
+set -E
+
+
+
