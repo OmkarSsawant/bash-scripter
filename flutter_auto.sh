@@ -18,18 +18,12 @@ function open_vscode(){
 function run_flutter(){
 	read START
 	
-	if [ $START == "y" ];
+	if [ $START = "y" ];
 	then
-		
-		echo "Starting Flutter @ $(pwd)"
-		DEVICE_RES=$(flutter devices | head -n 1)
-	       	if [ $DEVICE_RES != "No devices detected." ];
-		then
-			gnome-terminal --working-directory=$P_PATH -e "flutter run"	
-			return 0
-		else
-			return 1
-		fi	
+		P=$1
+		cd $P_PATH
+		echo "opening new terminal"
+		gnome-terminal --working-directory="$P" -e "flutter run"		
 	fi	
 
 }
